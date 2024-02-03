@@ -9,7 +9,7 @@
        public int Id { get; set; }
    }
 
-   // Продуктовые операции
+   // Product операции
    public class ProductDeleteRequest
    {
        public int Id { get; set; }
@@ -34,15 +34,7 @@
    ```csharp
    public class StoreContext : DbContext
    {
-       // ... остальной код ...
-
-       public virtual DbSet<Group> Groups { get; set; }
-
-       // ... остальной код ...
-
-       protected override void OnModelCreating(ModelBuilder modelBuilder)
-       {
-           // ... остальной код ...
+       
 
            modelBuilder.Entity<Group>(entity =>
            {
@@ -51,7 +43,7 @@
                entity.Property(g => g.Count).IsRequired();
            });
 
-           // ... остальной код ...
+          
        }
    }
    ```
